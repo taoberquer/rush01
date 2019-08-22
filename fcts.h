@@ -14,6 +14,7 @@ typedef struct s_view
 	int		value;
 }				t_view;
 
+int check(char *arg);
 int display_error();
 
 #endif
