@@ -6,7 +6,7 @@
 /*   By: tbedouet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 19:07:25 by tbedouet          #+#    #+#             */
-/*   Updated: 2019/08/22 19:14:07 by tbedouet         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:14:34 by tbedouet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void 	display(t_view **tab)
 		j = 0;
 		while (j < 4)
 		{
-			c = tab[i][j].value + '0';
+			c = tab[i][j]->value + '0';
 			write(1, &c, 1);
 			if (j != 3)
 				write(1, " ", 1);
