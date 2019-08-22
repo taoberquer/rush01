@@ -2,7 +2,7 @@
 
 # define FCTS_H
 
-type def struct s_view
+typedef struct s_view
 {
 	int		top;
 	int		bottom;
