@@ -6,7 +6,7 @@
 /*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tberquer          #+#    #+#             */
-/*   Updated: 2019/08/22 20:04:27 by tbedouet         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:14:15 by tbedouet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,31 @@ int display_error()
 	return (0);
 }
 
-t_view char_to_view(char *str, int index, int sub_index)
+t_view *char_to_view(char *str, int index, int sub_index)
 {
-	t_view view;
-	view.top = str[sub_index];
-	view.bottom = str[sub_index + 4];
-	view.left = str[index + 8];
-	view.right = str[index + 12];
-	view.right = 0;
+	t_view *view = malloc(sizeof(*view));
+	view->top = str[sub_index];
+	view->bottom = str[sub_index + 4];
+	view->left = str[index + 8];
+	view->right = str[index + 12];
+	view->right = 0;
 	return view;
 }
 
-t_view **char_to_view_tab(char *str)
+t_view ***char_to_view_tab(char *str)
 {
-	t_view **tab;
-	t_view *sub_tab;
+	t_view ***tab;
+	t_view **sub_tab;
 	int index;
 	int	sub_index;
 
-	if ((tab = malloc(sizeof(*tab) * 4)))
+	if (!(tab = malloc(sizeof(*tab) * 4)))
 		return (NULL);
 	index = 0;
 	sub_index = 0;
 	while (index < 4)
 	{
-		if ((sub_tab = malloc(sizeof(*tab) * 4)))
+		if (!(sub_tab = malloc(sizeof(*tab) * 4)))
 			return (NULL);
 		sub_index = 0;
 		while(sub_index < 4)
@@ -76,9 +76,9 @@ int main(int argc, char **argv)
 			}
 		}
 		index = -1;
-		while (tab[++index])
-			free(tab[index]);
-		free(tab);
+		//while (tab[++index])
+		//	free(tab[index]);
+		//free(tab);
 	}
 	return 0;
 }
