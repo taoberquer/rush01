@@ -6,7 +6,7 @@
 /*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tberquer          #+#    #+#             */
-/*   Updated: 2019/08/22 20:16:04 by tberquer         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:21:04 by tberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_view *char_to_view(char *str, int index, int sub_index)
 	view->bottom = str[sub_index + 4];
 	view->left = str[index + 8];
 	view->right = str[index + 12];
-	view->right = 0;
+	view->value = 0;
 	return view;
 }
 
