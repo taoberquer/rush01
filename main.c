@@ -6,7 +6,7 @@
 /*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tberquer          #+#    #+#             */
-/*   Updated: 2019/08/22 19:01:16 by tberquer         ###   ########.fr       */
+/*   Updated: 2019/08/22 19:20:21 by tberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int main(int argc, char **argv)
 		return (display_error());
 	if (1 == 1)
 		if ((tab = char_to_view_tab(argv[1])))
-			tower_finder(tab, 0, 0);
+			if ((tower_finder(tab, 0, 0))
+				display(tab)
+			else
+				display_error();
 
 	return 0;
 }
