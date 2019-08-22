@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbedouet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 19:07:25 by tbedouet          #+#    #+#             */
-/*   Updated: 2019/08/22 20:14:34 by tbedouet         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:17:08 by tberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fcts.h"
 
-void 	display(t_view **tab)
+void 	display(t_view ***tab)
 {
 	char	c;
 	int		i;

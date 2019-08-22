@@ -1,6 +1,6 @@
 #include "fcts.h"
 
-static int is_valid_tower(t_view **tab, int line, int col)
+static int is_valid_tower(t_view ***tab, int line, int col)
 {
 	int index;
 	int count;
@@ -11,67 +11,67 @@ static int is_valid_tower(t_view **tab, int line, int col)
 	max = 0;
 	while (index < 4)
 	{
-		if (max < tab[index][col].value)
+		if (max < tab[index][col]->value)
 		{
-			max = tab[index][col].value;
+			max = tab[index][col]->value;
 			count++;
 		}
 		index++;
 	}
-	if (count > tab[index][col].top)
+	if (count > tab[index][col]->top)
 		return (0);
 	index = 3;
 	count = 0;
 	max = 0;
 	while (index >= 0)
 	{
-		if (max < tab[index][col].value)
+		if (max < tab[index][col]->value)
 		{
-			max = tab[index][col].value;
+			max = tab[index][col]->value;
 			count++;
 		}
 		index--;
 	}
-	if (count > tab[index][col].bottom)
+	if (count > tab[index][col]->bottom)
 		return (0);
 	index = 0;
 	count = 0;
 	max = 0;
 	while (index < 4)
 	{
-		if (max < tab[line][index].value)
+		if (max < tab[line][index]->value)
 		{
-			max = tab[line][index].value;
+			max = tab[line][index]->value;
 			count++;
 		}
 		index++;
 	}
-	if (count > tab[line][index].left)
+	if (count > tab[line][index]->left)
 		return (0);
 	index = 3;
 	count = 0;
 	max = 0;
 	while (index >= 0)
 	{
-		if (max < tab[line][index].value)
+		if (max < tab[line][index]->value)
 		{
-			max = tab[line][index].value;
+			max = tab[line][index]->value;
 			count++;
 		}
 		index--;
 	}
-	if (count > tab[line][index].right)
+	if (count > tab[line][index]->right)
 		return (0);
 	return (1);
 }
 
-int tower_finder(t_view **tab, int line, int col)
+int tower_finder(t_view ***tab, int line, int col)
 {
 	if (col == 3 && line == 3 && is_valid_tower(tab, line, col))
 		return (1);
-	if (tab[line][col].value + 1 > 4)
+	if (tab[line][col]->value + 1 > 4)
 		return (0);
-	while (++tab[line][col].value < 5)
+	while (++tab[line][col]->value < 5)
 	{
 		if (is_valid_tower(tab, line, col))
 		{
@@ -84,6 +84,6 @@ int tower_finder(t_view **tab, int line, int col)
 					return (1);
 		}
 	}
-	tab[line][col].value = 0;
+	tab[line][col]->value = 0;
 	return (0);
 }
