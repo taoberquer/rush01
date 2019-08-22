@@ -2,6 +2,9 @@
 
 # define FCTS_H
 
+# include <unistd.h>
+# include <stdlib.h>
+
 typedef struct s_view
 {
 	int		top;
