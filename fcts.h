@@ -11,4 +11,6 @@ type def struct s_view
 	int		value;
 }				t_view;
 
+int display_error();
+
 #endif
