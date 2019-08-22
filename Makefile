@@ -1,4 +1,4 @@
-CFILES		= main.c
+CFILES		= main.c display.c tao.c check.c
 
 OFILES		= ${CFILES:.c=.o}
 

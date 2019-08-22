@@ -16,5 +16,7 @@ typedef struct s_view
 
 int check(char *arg);
 int display_error();
+void 	display(t_view **tab);
+int tower_finder(t_view **tab, int line, int col);
 
 #endif
