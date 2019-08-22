@@ -6,7 +6,7 @@
 /*   By: tbedouet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tbedouet          #+#    #+#             */
-/*   Updated: 2019/08/22 18:52:07 by tbedouet         ###   ########.fr       */
+/*   Updated: 2019/08/22 19:00:30 by tbedouet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int check(char *arg)
 	{
 		if (is_space(arg[i]))
 			++space;
-		if (arg[i] < '5' && arg[i] > '0')
+		else if (arg[i] < '5' && arg[i] > '0')
 		{
 			if ( !(is_space(arg[i + 1])) && !(arg[i + 1] == 0))
 				return (display_error());
