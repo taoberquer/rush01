@@ -6,7 +6,7 @@
 /*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tberquer          #+#    #+#             */
-/*   Updated: 2019/08/22 19:47:51 by tberquer         ###   ########.fr       */
+/*   Updated: 2019/08/22 19:52:56 by tberquer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ t_view **char_to_view_tab(char *str)
 
 int main(int argc, char **argv)
 {
+	int index;
 	t_view **tab;	
 	if (argc != 2)
 		return (display_error());
@@ -75,6 +76,9 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-
+	index = -1;
+	while (tab[++index])
+		free(tab[index]);
+	free(tab);
 	return 0;
 }
