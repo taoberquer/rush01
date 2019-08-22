@@ -6,7 +6,7 @@
 /*   By: tberquer <tberquer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 18:30:46 by tberquer          #+#    #+#             */
-/*   Updated: 2019/08/22 19:52:56 by tberquer         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:04:27 by tbedouet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ t_view **char_to_view_tab(char *str)
 	int index;
 	int	sub_index;
 
-	if ((tab = malloc(sizeof(*tab) * 5)))
+	if ((tab = malloc(sizeof(*tab) * 4)))
 		return (NULL);
 	index = 0;
 	sub_index = 0;
 	while (index < 4)
 	{
-		if ((sub_tab = malloc(sizeof(*tab) * 5)))
+		if ((sub_tab = malloc(sizeof(*tab) * 4)))
 			return (NULL);
 		sub_index = 0;
 		while(sub_index < 4)
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 	t_view **tab;	
 	if (argc != 2)
 		return (display_error());
-	if (1 == 1)
+	if (check(argv[1]))
 	{
 		if ((tab = char_to_view_tab(argv[1])))
 		{
@@ -75,10 +75,10 @@ int main(int argc, char **argv)
 				display_error();
 			}
 		}
+		index = -1;
+		while (tab[++index])
+			free(tab[index]);
+		free(tab);
 	}
-	index = -1;
-	while (tab[++index])
-		free(tab[index]);
-	free(tab);
 	return 0;
 }
